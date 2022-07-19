@@ -1,23 +1,40 @@
-import React from 'react'
-import Navbar from '../layout/Navbar'
+import React from "react";
+import Navbar from "../layout/Navbar";
+import Image from "next/image";
 
 function Hero() {
   return (
-    <div id="home" className="lg:h-screen h-screen relative wbg-hero_mobile lg:bg-hero bg-no-repeat relative  lg:bg-bottom bg-center  bg-cover">
+    <div id="home" className="bg-no-repeat relative z-20">
       <Navbar />
-      <img src="/img/leftB.png"className="w-52 left-[44%] hidden lg:block top-[20%] absolute" />
-      <img src="/img/centerB.png" className="w-52 left-[15%] hidden p-4 lg:block top-[45%] absolute object-fit"  />
-      <img src="/img/rightB.png" className="w-52 right-[15%] lg:block p-4 hidden top-[45%] absolute object-fit" />
-      {/* mobile */}
-      <img src="/img/center.png"  className="w-40 left-[32%] lg:hidden block top-[34%] absolute" />
-      <img src="/img/small_left.png" className="w-40 left-0 lg:hidden block top-[50%] absolute"   />
-      <img src="/img/small_right.png" className="w-40 right-0 block lg:hidden top-[50%] absolute"  />
-      <h1  data-aos='fade-left'  className="text-4xl  font-irish justify-center  absolute top-[25%] lg:top-276 left-[3%] lg:left-[20%]  text-transparent lg:my-12 lg:text-7xl bg-clip-text font-extrabold bg-gradient-to-b from-[#de5e82] to-[#4577d4] flex items-center"><img src="/img/CLOUDBUNNIES.png" /></h1>
+      <div className="md:hidden">
+        <Image
+          src={"/img/heroMobile.png"}
+          alt="hero image"
+          width="320"
+          height="360"
+          layout="responsive"
+        />
+      </div>
+      <div className="hidden md:block">
+        <Image
+          src={"/img/hero.png"}
+          alt="hero image"
+          width="1440"
+          height="1050"
+          layout="responsive"
+        />
+      </div>
 
-
-
+      <div className="absolute top-[23%] md:top-[15%] w-full flex justify-center">
+        <h1
+          data-aos="fade-left"
+          className="text-4xl hero-text font-irish-grover justify-center text-transparent lg:my-12 md:text-6xl lg:text-8xl bg-clip-text font-extrabold bg-gradient-to-b from-[#FF96B3] to-[#85A5DF] flex items-center"
+        >
+          CLOUDBUNNIES
+        </h1>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

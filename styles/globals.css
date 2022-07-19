@@ -18,6 +18,15 @@ input[type="number"]::-webkit-outer-spin-button {
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Irish-Grover';
+  src: url(/fonts/IrishGrover-Regular.ttf);
+}
+
+.font-irish-grover {
+  font-family: 'Irish-Grover';
+}
+
 @layer base {
   .faqBackground {
     background-position: center;
@@ -37,15 +46,15 @@ input[type="number"]::-webkit-outer-spin-button {
   .darks {
     box-shadow: 0 40px 40px   inset;
   }
-  .heroBackground {
-    background-position: center;
-    background-size: cover;
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.4) 100%
-      ),
-      url("/img/hero.png");
+
+  .hero-text {
+    font-size: 111px;
+    letter-spacing: 0.3rem;
+  }
+
+  .page-container {
+    max-width: 1560px;
+    width: 100%;
   }
 }
 
